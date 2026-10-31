@@ -338,7 +338,7 @@ def home():
         "examples": {
             "Add Friend with Credentials": "/add_friend?uid={uid}&password={password}&target_uid={target_uid}",
             "Add Friend with Token": "/add_friend?token={jwt_token}&target_uid={target_uid}",
-            "Remove Friend with Credentials": "/remove_friend?uid={uid}&password={password}&target_uid={target_uid}"
+            "Remove Friend with Credentials": "/remove_friend?uid={uid}&password={password}&target_uid={target_uid}",
             "Remove Friend with Token": "/remove_friend?token={jwt_token}&target_uid={target_uid}"
         }
     })
@@ -347,13 +347,5 @@ def home():
 # Run Server
 # -----------------------------
 
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "Friend API is running!"
-
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
